@@ -8,7 +8,7 @@ A fully functional multi-threaded HTTP server built from scratch in Python. This
 
 ✅ **GET / HEAD Support**
 
-* Serves static files (`.html`, `.txt`, `.png`, `.jpg`, `.jpeg`) from `resources/`
+* Serves static files (`.html`, `.txt`, `.png`, `.jpeg`) from `resources/`
 * Protects against directory traversal attacks
 * Returns appropriate `Content-Type`, `Content-Length`, and `Connection` headers
 
@@ -45,9 +45,15 @@ project_root/
 ├── server.py             # Main HTTP server script
 ├── resources/            # Root folder for static files
 │   ├── index.html        # Default home page
+|   ├── about.html        # About page
+|   ├── contact.html      # Contact page
+|   ├── sample1.txt       # TXT file 1
+|   ├── sample2.txt       # TXT file 2
+|   ├── png1.png          # PNG file 1
+|   ├── png2.png          # PNG file 2
+|   ├── jpeg1.jpeg        # JPEG file 1
+|   ├── jpeg2.jpeg        # JPEG file 2
 │   ├── uploads/          # JSON uploads from POST /upload
-│   ├── images/           # Image files (.png, .jpg, .jpeg)
-│   └── text/             # Text files (.txt)
 └── README.md             # Project documentation
 ```
 
@@ -75,7 +81,7 @@ Server runs at `http://127.0.0.1:8080/` by default.
 | Method | Path                              | Description                                   |
 | ------ | --------------------------------- | --------------------------------------------- |
 | GET    | `/` or `/index.html`              | Serves the main HTML page                     |
-| GET    | `/file.txt` or `/images/file.jpg` | Serves a file from `resources/`               |
+| GET    | `/sample1.txt` or `/png1.png`     | Downloads the file from `resources/` on chrome|
 | HEAD   | `/file.ext`                       | Returns only headers (no body)                |
 | POST   | `/upload`                         | Accepts JSON data and saves as a `.json` file |
 
@@ -167,5 +173,5 @@ Uploaded JSON files are saved in `resources/uploads/` with unique timestamped fi
 ## Author
 
 **Ridaa Mahrooz**
-Built for a Networking / Operating Systems assignment demonstrating multithreading and HTTP fundamentals.
+Built for a Computer Networks Project demonstrating multithreading and HTTP fundamentals.
 
